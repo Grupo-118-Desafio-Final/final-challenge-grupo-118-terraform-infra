@@ -1,0 +1,9 @@
+name: 'Destroy Terraform Resources'
+
+on:
+  workflow_dispatch: # Manual triggers
+
+jobs:
+  destroy:
+    uses: Grupo-118-Tech-Challenge-Fiap-11SOAT/terraform-template-pipeline-grupo118-fase-3/.github/workflows/terraform-template-destroy-resource.yml@main
+    secrets: inherit
