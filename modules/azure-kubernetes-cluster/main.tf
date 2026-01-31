@@ -1,4 +1,4 @@
-resource "azurerm_kubernetes_cluster" "group118fase3infraaks" {
+resource "azurerm_kubernetes_cluster" "grupo118finalchallengeinfraaks" {
   name                    = var.name
   location                = var.location
   resource_group_name     = var.resource_group_name
@@ -34,12 +34,12 @@ resource "azurerm_kubernetes_cluster" "group118fase3infraaks" {
 resource "azurerm_role_assignment" "owner-tocreate-nginx" {
   scope                = var.subnet_id
   role_definition_name = "Owner"
-  principal_id         = azurerm_kubernetes_cluster.group118fase3infraaks.identity.0.principal_id
+  principal_id         = azurerm_kubernetes_cluster.grupo118finalchallengeinfraaks.identity.0.principal_id
 
 }
 
 resource "azurerm_role_assignment" "acr-pull" {
-  principal_id                     = azurerm_kubernetes_cluster.group118fase3infraaks.identity.0.principal_id
+  principal_id                     = azurerm_kubernetes_cluster.grupo118finalchallengeinfraaks.identity.0.principal_id
   role_definition_name             = "AcrPull"
   scope                            = var.acr_id
   skip_service_principal_aad_check = true
