@@ -4,7 +4,7 @@ terraform {
     organization = "Grupo-118-Desafio-Final"
 
     workspaces {
-      name = "inal-challenge-grupo-118-terraform-infra"
+      name = "final-challenge-grupo-118-terraform-infra"
     }
 
   }
