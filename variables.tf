@@ -39,3 +39,8 @@ variable "rabbitmq_region" {
   type        = string
   default     = "azure-arm::eastus"
 }
+
+variable "cloudamqp_customer_api_key" {
+  description = "The API key for CloudAMQP customer access"
+  type        = string
+}
