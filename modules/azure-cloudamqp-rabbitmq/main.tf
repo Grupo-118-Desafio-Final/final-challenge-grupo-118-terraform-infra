@@ -3,8 +3,3 @@ resource "cloudamqp_instance" "rabbitmqinstance" {
   plan       = var.plan #Loyal Lemming / lemming
   region     = var.region
 }
-
-resource "cloudamqp_rabbitmq_configuration" "rabbitmqconfiguration" {
-  instance_id = cloudamqp_instance.rabbitmqinstance.id
-  log_exchange_level = "info"
-}

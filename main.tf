@@ -107,3 +107,73 @@ module "rabbitmq" {
   plan          = var.rabbitmq_plan
   region        = var.rabbitmq_region
 }
+
+output "rabbitmq_instance_id" {
+  value = module.rabbitmq.instance_id
+}
+
+output "rabbitmq_instance_url" {
+  value = module.rabbitmq.instance_url
+  sensitive = true
+}
+
+output "rabbitmq_instance_vhost" {
+  value = module.rabbitmq.instance_vhost
+}
+
+output "rabbitmq_instance_apikey" {
+  value = module.rabbitmq.instance_apikey
+  sensitive = true
+}
+
+#endregion
+
+#region Storage Account for Blob
+
+module "infra_storage_account" {
+  source              = "./modules/azure-storage-account-medias"
+  location            = module.infra_resource_group.location
+  resource_group_name = module.infra_resource_group.name
+}
+
+# Storage Account Outputs
+
+output "name" {
+  value = module.infra_storage_account.name
+  description = "The name of the storage account"
+}
+
+output "primary_connection_string" {
+  value = module.infra_storage_account.primary_connection_string
+  description = "The primary connection string for the storage account"
+  sensitive = true
+}
+
+output "primary_blob_endpoint" {
+  value = module.infra_storage_account.primary_blob_endpoint
+  description = "The primary blob endpoint for the storage account"
+}
+
+output "primary_blob_host" {
+  value = module.infra_storage_account.primary_blob_host
+  description = "The primary blob host for the storage account"
+}
+
+output "primary_blob_internet_endpoint" {
+  value = module.infra_storage_account.primary_blob_internet_endpoint
+  description = "The primary blob internet endpoint for the storage account"
+}
+
+output "primary_blob_internet_host" {
+  value = module.infra_storage_account.primary_blob_internet_host
+  description = "The primary blob internet host for the storage account"
+}
+
+# Container Outputs
+
+output "container_id" {
+  value = module.infra_storage_account.container_id
+  description = "The ID of the storage container"
+}
+
+#endregion
