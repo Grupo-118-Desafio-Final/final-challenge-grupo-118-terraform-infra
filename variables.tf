@@ -1,7 +1,7 @@
 variable "resource_group_name" {
   description = "The name of the resource group where resources will be created"
   type        = string
-  default     = "final-challange-grupo-118-rg"
+  default     = "final-challange-grupo-118-infra-rg"
 }
 
 variable "resource_group_location" {
