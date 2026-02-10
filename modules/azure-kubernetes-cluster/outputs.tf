@@ -33,3 +33,8 @@ output "host" {
   description = "The host of the AKS cluster."
   value       = azurerm_kubernetes_cluster.grupo118finalchallengeinfraaks.kube_config.0.host
 }
+
+output "disk_id" {
+  description = "The disk ID of the AKS cluster."
+  value       = azurerm_managed_disk.grupo118finalchallengedisk.id
+}

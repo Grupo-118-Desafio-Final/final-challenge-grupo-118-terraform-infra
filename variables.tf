@@ -44,3 +44,21 @@ variable "cloudamqp_customer_api_key" {
   description = "The API key for CloudAMQP customer access"
   type        = string
 }
+
+variable "apim_name" {
+  description = "The name of the Azure API Management service instance"
+  type        = string
+  default     = "grupo118fasefinalinfraapim"
+}
+
+variable "nsg_name" {
+  description = "The name of the Network Security Group"
+  type        = string
+  default     = "grupo118fasefinalinfransg"
+}
+
+variable "publisher_email" {
+  description = "The email address of the API Management publisher"
+  type        = string
+  default     = "group118fasefinal@example.com"
+}

@@ -177,3 +177,30 @@ output "container_id" {
 }
 
 #endregion
+
+#region APIM
+module "infra_apim" {
+  source              = "./modules/azure-api-management"
+  apim_name           = var.apim_name
+  location            = module.infra_resource_group.location
+  resource_group_name = module.infra_resource_group.name
+  nsg_name            = var.nsg_name
+  subnet_id           = module.infra_vnet_subnets.snet-apim-id
+  publisher_email     = var.publisher_email
+
+}
+
+output "apim_user_password" {
+  value       = module.infra_apim.password
+  description = "The admin password for the Azure API Management user."
+  sensitive   = true
+
+}
+
+output "apim_user_email" {
+  value       = module.infra_apim.email
+  description = "The email of the Azure API Management user."
+
+}
+
+#endregion
