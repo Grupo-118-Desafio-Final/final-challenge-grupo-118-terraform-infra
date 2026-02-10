@@ -97,6 +97,10 @@ YAML
   depends_on = [module.infra_aks]
 }
 
+output "disk_id" {
+  value = module.infra_aks.disk_id
+}
+
 #endregion
 
 #region RabbitMQ
