@@ -117,7 +117,7 @@ output "rabbitmq_instance_id" {
 }
 
 output "rabbitmq_instance_url" {
-  value = module.rabbitmq.instance_url
+  value     = module.rabbitmq.instance_url
   sensitive = true
 }
 
@@ -126,7 +126,7 @@ output "rabbitmq_instance_vhost" {
 }
 
 output "rabbitmq_instance_apikey" {
-  value = module.rabbitmq.instance_apikey
+  value     = module.rabbitmq.instance_apikey
   sensitive = true
 }
 
@@ -143,40 +143,40 @@ module "infra_storage_account" {
 # Storage Account Outputs
 
 output "name" {
-  value = module.infra_storage_account.name
+  value       = module.infra_storage_account.name
   description = "The name of the storage account"
 }
 
 output "primary_connection_string" {
-  value = module.infra_storage_account.primary_connection_string
+  value       = module.infra_storage_account.primary_connection_string
   description = "The primary connection string for the storage account"
-  sensitive = true
+  sensitive   = true
 }
 
 output "primary_blob_endpoint" {
-  value = module.infra_storage_account.primary_blob_endpoint
+  value       = module.infra_storage_account.primary_blob_endpoint
   description = "The primary blob endpoint for the storage account"
 }
 
 output "primary_blob_host" {
-  value = module.infra_storage_account.primary_blob_host
+  value       = module.infra_storage_account.primary_blob_host
   description = "The primary blob host for the storage account"
 }
 
 output "primary_blob_internet_endpoint" {
-  value = module.infra_storage_account.primary_blob_internet_endpoint
+  value       = module.infra_storage_account.primary_blob_internet_endpoint
   description = "The primary blob internet endpoint for the storage account"
 }
 
 output "primary_blob_internet_host" {
-  value = module.infra_storage_account.primary_blob_internet_host
+  value       = module.infra_storage_account.primary_blob_internet_host
   description = "The primary blob internet host for the storage account"
 }
 
 # Container Outputs
 
 output "container_id" {
-  value = module.infra_storage_account.container_id
+  value       = module.infra_storage_account.container_id
   description = "The ID of the storage container"
 }
 
