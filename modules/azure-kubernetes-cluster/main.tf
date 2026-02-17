@@ -44,12 +44,3 @@ resource "azurerm_role_assignment" "acr-pull" {
   scope                            = var.acr_id
   skip_service_principal_aad_check = true
 }
-
-resource "azurerm_managed_disk" "grupo118finalchallengedisk" {
-  name                 = "${var.name}-disk"
-  location             = var.location
-  resource_group_name  = var.resource_group_name
-  storage_account_type = "Standard_LRS"
-  create_option        = "Empty"
-  disk_size_gb         = 20
-}
