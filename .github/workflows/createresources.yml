@@ -12,4 +12,9 @@ on:
 jobs:
   deploy:
     uses: Grupo-118-Desafio-Final/final-challenge-grupo-118-template-pipeline/.github/workflows/terraform-template-creation-resource.yml@main
+    with:
+      terraform_var_mapping: |    
+        {
+          "cloudamqp_customer_api_key":"CLOUDAMQP_CUSTOMER_KEY"
+        }
     secrets: inherit
