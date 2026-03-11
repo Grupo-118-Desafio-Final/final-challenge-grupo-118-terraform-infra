@@ -27,5 +27,5 @@ resource "azurerm_storage_account" "grupo118finalchallengeinfrasa" {
 resource "azurerm_storage_container" "grupo118finalchallengeinfrasacontainer" {
   name                  = "grupo118finalchallengecontainer"
   storage_account_id    = azurerm_storage_account.grupo118finalchallengeinfrasa.id
-  container_access_type = "private"
+  container_access_type = "blob"
 }
